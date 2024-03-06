@@ -11,3 +11,13 @@ def solution(n):
             return num, sumnum, n
 
 print(solution(123))
+
+
+def digitsum(n):
+    num = int(n)
+    if num < 10:
+        return num
+    else:
+        return num % 10 + digitsum(num//10)
+
+print(digitsum(123))
