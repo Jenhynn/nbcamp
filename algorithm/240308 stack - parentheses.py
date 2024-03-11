@@ -1,47 +1,72 @@
 # 괄호 : 9012번
 # 괄호 문자열 '(', ')' 이 올바르게 구성된 문자열 (VPS) 인지 판단하여 YES, NO 출력
 
-# t = int(input())
+# Stack
+# 여는 괄호가 나오면 push
+# 닫는 괄호가 나오면 pop
+# 끝까지 반복했을 때 스택이 비어 있어야 함
+
+
+t = int(input())
+# class 없이 풀어보자
+
+for _ in range(t):
+    string = input()
+    stack = []
+    for i in string:
+        if i == '(':
+            stack.append(i)
+        elif i == ')':
+            if len(stack) != 0:
+                print(stack)
+                stack.pop()
+            else:
+                print('NO')
+                print(stack)
+                break
 
 
 
 
-# for _ in range(t):
-#     ps = input()
-#     left = ps.count('(')
-#     right = ps.count(')')
-#     print(left, right)
-    # if left == right:
-    #     print(left, right, 'YES')
-    # else:
-    #     print(left, right, 'NO')
-    #개수만 같으면 안 되고 모양도 고려해야 함 ())(() 는 3 = 3 이지만 NO 가 나와야 함
 
 
-class Node:
-    def __init__(self, item, next):
-        self.item = item
-        self.next = next
+
+
+
+
+
+
+
+
+
+
 
 
 class Stack:
     def __init__(self):
-        self.top = None
+        self.stacklist = []
 
-    #push, pop, is_empty
     def push(self, item):
-        self.top = Node(value, self.top)
+        self.stacklist.append(item)
 
     def pop(self):
-        if not self.top:
-            return None
+        return self.stacklist.pop()
 
-        node = self.top
-        self.top = self.top.next
-        return node.item
+    def top(self):
+        return self.stacklist[-1] # return 맞아?
 
     def is_empty(self):
-        return self.top is None
+        len(self.stacklist)
+
+
+
+
+
+
+
+# print(stack)
+
+
 
 
 # def parentheses(s):

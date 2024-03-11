@@ -12,6 +12,7 @@ for i in range(t):
         if string[:j] == string[j+1:j+1+j]:
             pattern = string[:j+1]
             print(f'#{i+1} {len(pattern)}')
+            break
         else:
             continue
 
