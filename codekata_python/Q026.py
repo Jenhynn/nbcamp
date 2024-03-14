@@ -9,3 +9,4 @@ def solution(slice, n):
 
 print(solution(7, 10))
 print(solution(4,12))
+

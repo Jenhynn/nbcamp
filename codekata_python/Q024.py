@@ -10,7 +10,7 @@ def solution(numbers):
             max = multiple
         else:
             continue
-    return combinations, multiple, max
+    return max
 
 
 print(solution([0, 31, 24, 10, 1, 9]))
